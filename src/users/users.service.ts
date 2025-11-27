@@ -18,11 +18,7 @@ export class UsersService {
 
   //Returns all Users
   getAllUsers() {
-    return this.userRepository.find({
-      relations: {
-        profile: true,
-      },
-    });
+    return this.userRepository.find();
   }
 
   //Create User
