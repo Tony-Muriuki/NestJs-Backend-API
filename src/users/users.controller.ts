@@ -6,7 +6,7 @@ import { CreateUserDto } from './dtos/create-user.dto';
 export class UsersController {
   constructor(private usersService: UsersService) {} //created an instance of Userservice Class inside controller
   //Get Request--> https://localhost:3000/users
-  @Get('{/:isMarried}')
+  @Get()
   getUsers() {
     return this.usersService.getAllUsers(); //Without Dependency Injection(DI)
   }
