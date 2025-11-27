@@ -1,3 +1,4 @@
+import { User } from 'src/users/user.entity';
 import {
   Column,
   CreateDateColumn,
@@ -28,4 +29,6 @@ export class Tweet {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  user: User;
 }
