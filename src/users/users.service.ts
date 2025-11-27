@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 //Users Service
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';

@@ -32,4 +32,5 @@ export class User {
   updatedAT: Date;
   @DeleteDateColumn()
   deletedAT: Date;
+  tweets: any;
 }
