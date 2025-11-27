@@ -40,11 +40,10 @@ export class UsersService {
 
   public async deleteUser(id: number) {
     //Find the user with the given ID
-    let user = await this.userRepository.findOneBy({ id: id });
+
     //Delete the user
     await this.userRepository.delete(id);
-    //Delete the profile
-    await this.profileRepository.delete(user.profile.id);
+
     //Send a Response
     return { deleted: true };
   }

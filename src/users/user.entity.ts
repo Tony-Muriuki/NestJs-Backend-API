@@ -5,7 +5,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -25,7 +24,7 @@ export class User {
     cascade: ['insert'],
     // eager: true,
   })
-  @JoinColumn()
+  // @JoinColumn()
   profile?: Profile; //Marked as Optional
   @CreateDateColumn() //Sets the value of the Created At Field when Created
   createdAT: Date; //Record Date and Time when a User was Created.
