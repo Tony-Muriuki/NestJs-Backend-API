@@ -23,6 +23,7 @@ export class User {
   password: string;
   @OneToOne(() => Profile, {
     cascade: ['insert'],
+    eager: true,
   })
   @JoinColumn()
   profile?: Profile; //Marked as Optional
