@@ -3,6 +3,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -30,5 +31,6 @@ export class Tweet {
   @UpdateDateColumn()
   updatedAt: Date;
 
+  @ManyToOne(() => User, (user) => user.tweets)
   user: User;
 }
