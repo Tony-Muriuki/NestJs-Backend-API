@@ -1,10 +1,12 @@
 //User Entity
 import { Profile } from 'src/profile/profile.entity';
+import { Tweet } from 'src/tweets/tweets.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -26,11 +28,13 @@ export class User {
   })
   // @JoinColumn()
   profile?: Profile; //Marked as Optional
+  @OneToMany(() => Tweet, (tweet) => tweet.user)
+  tweets: Tweet[];
+
   @CreateDateColumn() //Sets the value of the Created At Field when Created
   createdAT: Date; //Record Date and Time when a User was Created.
   @UpdateDateColumn()
   updatedAT: Date;
   @DeleteDateColumn()
   deletedAT: Date;
-  tweets: any;
 }
