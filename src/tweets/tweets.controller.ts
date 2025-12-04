@@ -1,5 +1,13 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+} from '@nestjs/common';
 import { TweetsService } from './tweets.service';
+import { CreateTweetDto } from './dto/create-tweet.dto';
 
 @Controller('tweets')
 export class TweetsController {
@@ -15,5 +23,9 @@ export class TweetsController {
   public GetTweets(@Param('userId', ParseIntPipe) userId: number) {
     console.log(userId);
     return this.tweetsService.getTweets(userId);
+  }
+  @Post()
+  public async CreateTweet(@Body() tweet: CreateTweetDto) {
+    return await this.tweetsService.CreateTweet(tweet);
   }
 }
