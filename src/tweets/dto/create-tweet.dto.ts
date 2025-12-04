@@ -6,5 +6,5 @@ export class CreateTweetDto {
   text: string;
 
   @IsOptional()
-  image?: string;
+  image?: string; //image url orbinary data of the image
 }
