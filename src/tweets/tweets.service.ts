@@ -27,7 +27,8 @@ export class TweetsService {
     //Find user with the given userid from user Table
     let user = await this.userService.FindUserById(createTweetDto.userId);
     //2:Create A Tweet
-    let tweet = this.tweetRepository.create({
+    // eslint-disable-next-line @typescript-eslint/await-thenable
+    let tweet = await this.tweetRepository.create({
       ...createTweetDto,
       user: user,
     });
