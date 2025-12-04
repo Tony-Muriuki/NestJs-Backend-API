@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
+import { IsString, IsNotEmpty, IsOptional, IsInt } from 'class-validator';
 
 export class CreateTweetDto {
   @IsNotEmpty()
@@ -7,4 +7,8 @@ export class CreateTweetDto {
 
   @IsOptional()
   image?: string; //image url orbinary data of the image
+
+  @IsNotEmpty()
+  @IsInt()
+  userId: number;
 }
